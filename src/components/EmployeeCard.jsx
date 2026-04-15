@@ -19,8 +19,6 @@ const EmployeeCard = ({ emp, index = 0 }) => {
   const color = colorSets[index % colorSets.length];
 
   return (
-    // Card wrapper — group class hover effects children pe apply karne ke liye
-    // backdrop-blur-sm = frosted glass effect, overflow-hidden = glow line clip ke liye
     <div
       className="group relative flex flex-col items-center p-5 rounded-2xl border border-white/8 bg-white/4 backdrop-blur-sm
                  hover:border-white/20 hover:bg-white/9 transition-all duration-300 cursor-pointer overflow-hidden"
@@ -33,13 +31,11 @@ const EmployeeCard = ({ emp, index = 0 }) => {
           className="w-16 h-16 rounded-full flex items-center justify-center border-2"
           style={{ borderColor: color.ring, background: color.bg }}
         >
-          {/* FaUserCircle icon — image ki jagah, color bhi card theme se match karta hai */}
           <FaUserCircle style={{ color: color.text, fontSize: "42px" }} />
         </div>
         <span className="absolute bottom-0.5 right-0.5 w-3 h-3 bg-emerald-400 border-2 border-[#0a0a0f] rounded-full" />
       </div>
 
-      {/* Employee full name */}
       <h3 className="text-[14px] font-bold text-white text-center leading-tight mb-1.5">
         {emp.firstName} {emp.lastName}
       </h3>
@@ -51,7 +47,6 @@ const EmployeeCard = ({ emp, index = 0 }) => {
       </span>
       <div className="w-full h-px bg-white/[0.07] mb-4" />
 
-      {/* Contact details section */}
       <div className="w-full space-y-1.5 mb-4">
         <p className="flex items-center gap-2 text-[11px] text-white/40 truncate">
           <svg
@@ -70,9 +65,7 @@ const EmployeeCard = ({ emp, index = 0 }) => {
           <span className="truncate">{emp.email}</span>
         </p>
 
-        {/* Location row  */}
         <p className="flex items-center gap-2 text-[11px] text-white/40">
-          {/* Location pin SVG icon */}
           <svg
             className="w-3 h-3 shrink-0 text-white/25"
             fill="none"

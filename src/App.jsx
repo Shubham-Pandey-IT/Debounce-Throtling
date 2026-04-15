@@ -11,10 +11,8 @@ const App = () => {
   const [visibleCount, setVisibleCount] = useState(6);
   const [loading, setLoading] = useState(false);
 
-  // Optimization Hooks
   const debouncedSearch = useDebounce(searchTerm, 400);
 
-  // Fetch Data
   useEffect(() => {
     const getData = async () => {
       setLoading(true);
