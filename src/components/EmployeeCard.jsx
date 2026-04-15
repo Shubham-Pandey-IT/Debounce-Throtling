@@ -1,8 +1,9 @@
 import React from "react";
-
+import { useNavigate } from "react-router-dom";
 import { FaUserCircle } from "react-icons/fa";
 
 const EmployeeCard = ({ emp, index = 0 }) => {
+  const navigate = useNavigate(); 
   // 6 alag color themes — har card ko ek unique accent color milta hai
   // ring = border color, bg = background tint, text = icon/badge text color
   const colorSets = [
@@ -24,9 +25,7 @@ const EmployeeCard = ({ emp, index = 0 }) => {
       className="group relative flex flex-col items-center p-5 rounded-2xl border border-white/8 bg-white/4 backdrop-blur-sm
                  hover:border-white/20 hover:bg-white/9 transition-all duration-300 cursor-pointer overflow-hidden"
     >
-      <div
-        className="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-px opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-      />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-px opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
       {/* Avatar section */}
       <div className="relative mb-4">
@@ -97,6 +96,7 @@ const EmployeeCard = ({ emp, index = 0 }) => {
       </div>
 
       <button
+        onClick={() => navigate(`/employee/${emp.id}`)}
         className="w-full py-2.5 rounded-xl text-xs font-bold tracking-wide border border-white/10 text-white/60
                          hover:text-white hover:border-white/25 hover:bg-white/6 active:scale-95 transition-all duration-200"
       >
